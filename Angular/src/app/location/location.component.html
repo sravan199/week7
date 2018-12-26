@@ -1,0 +1,46 @@
+
+
+    <main role="main" class="inner cover">
+
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Air Pollution</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarsExample02">
+            
+            </div>
+          </nav>
+
+          <br>
+      <h1 class="cover-heading">{{locationID}}:-</h1>
+         <br>
+    
+     
+        <div *ngIf='value'>
+         
+             <table id="customers">
+                <tr style="text-align: center">
+                  <th> S.No</th>
+                  <th> Parameter</th>
+                  <th> Units</th>
+                  <th> Value</th>
+                  <th> lastUpdated</th>
+                </tr>
+                
+                <tr *ngFor="let i of value[0].measurements;let e = index">
+                    <td>{{e+1}}</td>
+                  <td>{{i.parameter}}</td>
+                  <td>{{i.unit}}</td>
+                  <td> {{i.value}}</td>
+                  <td>{{i.lastUpdated}}</td>
+              
+                </tr>
+              </table>
+
+
+          </div>
+   
+
+    </main>
